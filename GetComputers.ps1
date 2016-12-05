@@ -1,0 +1,2 @@
+﻿Import-Module ActiveDirectory
+Get-ADComputer -Filter {OperatingSystem -NotLike "*server*"} -Property Name -searchbase "OU=Workstations,DC=Com,DC=Viamonstra,DC=Corp" | Select Name | Export-CSV Computers.csv -NoTypeInformation -Encoding UTF8
